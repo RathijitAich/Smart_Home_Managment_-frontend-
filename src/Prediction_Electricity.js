@@ -99,7 +99,7 @@ const Prediction_Electricity = ({ email, setEmail }) => {
 
       // http://localhost:5000/predict
 
-      const response = await fetch('https://smart-home-management-electricity.onrender.com', {
+      const response = await fetch('https://smart-home-management-electricity.onrender.com/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
