@@ -28,7 +28,7 @@ const ReviewWorker = ({ email, setEmail }) => {
 
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8080/api/job-applications/unreviewed-jobs/homeowner/${encodeURIComponent(currentEmail)}`);
+      const response = await axios.get(`https://homemanagement-backend.onrender.com/api/job-applications/unreviewed-jobs/homeowner/${encodeURIComponent(currentEmail)}`);
       console.log('Unreviewed jobs response:', response.data);
       setUnreviewedJobs(response.data);
       setError(null);
@@ -63,7 +63,7 @@ const ReviewWorker = ({ email, setEmail }) => {
         rating: reviewForm.rating
       };
 
-      const response = await axios.post('http://localhost:8080/api/reviews', reviewData);
+      const response = await axios.post('https://homemanagement-backend.onrender.com/api/reviews', reviewData);
       console.log('Review submitted:', response.data);
       
       setNotification({ type: 'success', message: 'Review submitted successfully!' });

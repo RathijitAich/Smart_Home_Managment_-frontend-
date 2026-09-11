@@ -12,7 +12,7 @@ const WorkerDashboard = ({ worker_email, setWorkerEmail }) => {
   useEffect(() => {
     const fetchWorkerDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/maintenance-worker/${encodeURIComponent(worker_email)}`);
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/maintenance-worker/${encodeURIComponent(worker_email)}`);
         if (response.ok) {
           const data = await response.json();
           setWorker(data);

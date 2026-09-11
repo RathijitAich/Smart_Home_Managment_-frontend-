@@ -22,6 +22,8 @@ import Groceries from './pages/Groceries';
 import BillReminders from './pages/BillReminders';
 import Approve from './Approve';
 import Chat from './Chat_experiment';
+import Gas from './gas';
+
 
 import JobHistory from './JobHistory'; 
 
@@ -50,7 +52,8 @@ const ConditionalNavbar = ({ email, setEmail, worker_email, setWorkerEmail }) =>
     '/bill-reminders',
     '/predict-bills',
     '/electricity-prediction',
-    '/job-history'
+    '/job-history',
+    '/gas-prediction'
   ];
   
   const shouldShowNavbar = navbarPaths.includes(location.pathname);
@@ -125,6 +128,7 @@ function App() {
             <Route path="/predict-bills" element={<PredictBills />} />
             <Route path="/electricity-prediction" element={<Prediction email={email} setEmail={setEmail} />} />
             <Route path="/job-history" element={<JobHistory worker_email={worker_email} setWorkerEmail={setWorkerEmail} />} />
+            <Route path = "/gas-prediction" element ={ <Gas/> } />
           </Routes>
         </div>
       </div>

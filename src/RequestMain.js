@@ -72,7 +72,7 @@ function MaintenanceRequest({ email, setEmail }) {
 
   const submitMaintenanceRequest = async (requestData) => {
     try {
-      const response = await fetch("http://localhost:8080/api/maintenance-requests", {
+      const response = await fetch("https://homemanagement-backend.onrender.com/api/maintenance-requests", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

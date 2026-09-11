@@ -14,7 +14,7 @@ const Dashboard = ({ email, setEmail , worker_email }) => {
   useEffect(() => {
     const fetchHomeownerDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/homeowner/${encodeURIComponent(email)}`);
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/homeowner/${encodeURIComponent(email)}`);
         if (response.ok) {
           const data = await response.json();
           setHomeowner(data);

@@ -21,7 +21,7 @@ const JobHistory = ({ worker_email, setWorkerEmail }) => {
 
   const fetchJobHistory = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/api/job-applications/completed-jobs/worker/${encodeURIComponent(worker_email)}`);
+      const response = await fetch(`https://homemanagement-backend.onrender.com/api/job-applications/completed-jobs/worker/${encodeURIComponent(worker_email)}`);
       
       if (!response.ok) {
         throw new Error('Failed to fetch job history');
@@ -38,7 +38,7 @@ const JobHistory = ({ worker_email, setWorkerEmail }) => {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/api/reviews/worker/${encodeURIComponent(worker_email)}`);
+      const response = await fetch(`https://homemanagement-backend.onrender.com/api/reviews/worker/${encodeURIComponent(worker_email)}`);
       
       if (!response.ok) {
         throw new Error('Failed to fetch reviews');

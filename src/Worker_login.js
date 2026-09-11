@@ -41,7 +41,7 @@ export default function WorkerLogin({worker_email, setWorkerEmail}) {
     setNotification(null);
 
     try {
-      const response = await fetch("http://localhost:8080/api/login/worker", {
+      const response = await fetch("https://homemanagement-backend.onrender.com/api/login/worker", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

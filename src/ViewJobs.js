@@ -20,7 +20,7 @@ const ShowJobs = ({ worker_email, setWorkerEmail }) => {
   useEffect(() => {
     const fetchWorkerDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/maintenance-worker/${encodeURIComponent(worker_email)}`);
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/maintenance-worker/${encodeURIComponent(worker_email)}`);
         if (response.ok) {
           const data = await response.json();
           setWorker(data);
@@ -39,7 +39,7 @@ const ShowJobs = ({ worker_email, setWorkerEmail }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/jobs");
+        const response = await fetch("https://homemanagement-backend.onrender.com/api/jobs");
         console.log("Fetching jobs from backend...");
         if (response.ok) {
           console.log("jobs fetched successfully", response);
@@ -124,7 +124,7 @@ const ShowJobs = ({ worker_email, setWorkerEmail }) => {
         status: "pending"
       };
 
-      const response = await fetch("http://localhost:8080/api/job-applications", {
+      const response = await fetch("https://homemanagement-backend.onrender.com/api/job-applications", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -34,7 +34,7 @@ const Prediction_Electricity = ({ email, setEmail }) => {
         return;
       }
 
-      const response = await fetch(`http://localhost:8080/api/room-setup/setup/${encodeURIComponent(userEmail)}`);
+      const response = await fetch(`https://homemanagement-backend.onrender.com/api/room-setup/setup/${encodeURIComponent(userEmail)}`);
       
       if (!response.ok) {
         if (response.status === 404) {
@@ -91,8 +91,11 @@ const Prediction_Electricity = ({ email, setEmail }) => {
       });
 
       console.log('Sending data to Python backend:', devicesData);
+      
 
       // Send data to Python Flask backend
+
+
       const response = await fetch('http://localhost:5000/predict', {
         method: 'POST',
         headers: {

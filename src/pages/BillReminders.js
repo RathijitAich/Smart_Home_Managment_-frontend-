@@ -68,7 +68,7 @@ const BillReminders = () => {
   };
 
   // API base URL
-  const API_BASE_URL = 'http://localhost:8080/api';
+  const API_BASE_URL = 'https://homemanagement-backend.onrender.com/api';
 
   // API functions for bill reminders
   const saveBillReminder = async (reminder) => {

@@ -17,7 +17,7 @@ const Navbar = ({ email, setEmail, worker_email, setWorkerEmail }) => {
       try {
         // Fetch homeowner details if email exists
         if (currentEmail) {
-          const homeownerResponse = await fetch(`http://localhost:8080/api/homeowner/${encodeURIComponent(currentEmail)}`);
+          const homeownerResponse = await fetch(`https://homemanagement-backend.onrender.com/api/homeowner/${encodeURIComponent(currentEmail)}`);
           if (homeownerResponse.ok) {
             const homeownerData = await homeownerResponse.json();
             setHomeowner(homeownerData);
@@ -26,7 +26,7 @@ const Navbar = ({ email, setEmail, worker_email, setWorkerEmail }) => {
 
         // Fetch worker details if worker_email exists
         if (currentWorkerEmail) {
-          const workerResponse = await fetch(`http://localhost:8080/api/maintenance-worker/${encodeURIComponent(currentWorkerEmail)}`);
+          const workerResponse = await fetch(`https://homemanagement-backend.onrender.com/api/maintenance-worker/${encodeURIComponent(currentWorkerEmail)}`);
           if (workerResponse.ok) {
             const workerData = await workerResponse.json();
             setWorker(workerData);

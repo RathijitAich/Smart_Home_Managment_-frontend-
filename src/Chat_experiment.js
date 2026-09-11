@@ -25,7 +25,7 @@ const ChatExperiment = ({ email, worker_email }) => {
 
   // WebSocket connection
   useEffect(() => {
-    const socket = new SockJS('http://localhost:8080/ws');
+    const socket = new SockJS('https://homemanagement-backend.onrender.com/ws');
     const client = new Client({
       webSocketFactory: () => socket,
       reconnectDelay: 5000,
@@ -93,7 +93,7 @@ const ChatExperiment = ({ email, worker_email }) => {
     setLoading(true);
     try {
       // Get all messages for the current user
-      const response = await axios.get(`http://localhost:8080/api/messages/user/${user_email}`);
+      const response = await axios.get(`https://homemanagement-backend.onrender.com/api/messages/user/${user_email}`);
       const allMessages = response.data;
       
       console.log('All messages:', allMessages);
@@ -259,7 +259,7 @@ const ChatExperiment = ({ email, worker_email }) => {
       } else {
         // Method 2: Fallback to HTTP API
         console.log('WebSocket not available, sending via HTTP...');
-        const response = await axios.post('http://localhost:8080/api/sendMessage', messageToSend);
+        const response = await axios.post('https://homemanagement-backend.onrender.com/api/sendMessage', messageToSend);
         console.log('Message sent via HTTP:', response.data);
         
         // Add the returned message to state
@@ -311,7 +311,7 @@ const ChatExperiment = ({ email, worker_email }) => {
       console.log('Starting new conversation with validation:', conversationData);
 
       // Call the StartConversation endpoint
-      const response = await axios.post('http://localhost:8080/api/StartConversation', conversationData);
+      const response = await axios.post('https://homemanagement-backend.onrender.com/api/StartConversation', conversationData);
       console.log('Conversation started successfully:', response.data);
 
       // Clear form and close modal
@@ -363,7 +363,7 @@ const ChatExperiment = ({ email, worker_email }) => {
   const handleConversationSelect = async (conversation) => {
     setSelectedConversation(conversation);
     try {
-      const res = await axios.get('http://localhost:8080/api/conversation', {
+      const res = await axios.get('https://homemanagement-backend.onrender.com/api/conversation', {
         params: {
           user1: user_email,
           user2: conversation.participant.email

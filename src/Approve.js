@@ -18,7 +18,7 @@ const Approve = ({ email, setEmail }) => {
   useEffect(() => {
     const fetchHomeownerDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/homeowner/${email}`);
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/homeowner/${email}`);
         if (response.ok) {
           const data = await response.json();
           setHomeowner(data);
@@ -40,7 +40,7 @@ const Approve = ({ email, setEmail }) => {
     const fetchJobAssignments = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:8080/api/job-applications/homeowner/${email}`);
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/job-applications/homeowner/${email}`);
         
         if (response.ok) {
           const data = await response.json();
@@ -69,7 +69,7 @@ const Approve = ({ email, setEmail }) => {
     setLoadingReviews(prev => new Set(prev).add(workerEmail));
     
     try {
-      const response = await fetch(`http://localhost:8080/api/reviews/worker/${encodeURIComponent(workerEmail)}`);
+      const response = await fetch(`https://homemanagement-backend.onrender.com/api/reviews/worker/${encodeURIComponent(workerEmail)}`);
       
       if (response.ok) {
         const reviews = await response.json();
@@ -167,7 +167,7 @@ const Approve = ({ email, setEmail }) => {
           status: "approved"
         };
 
-        const response = await fetch(`http://localhost:8080/api/job-applications/update-status`, {
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/job-applications/update-status`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -205,7 +205,7 @@ const Approve = ({ email, setEmail }) => {
           status: "rejected"
         };
 
-        const response = await fetch(`http://localhost:8080/api/job-applications/update-status`, {
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/job-applications/update-status`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

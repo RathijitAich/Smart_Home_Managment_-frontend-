@@ -70,7 +70,7 @@ const RoomSetup = ({email, setEmail}) => {
     // If room is saved in database, delete from backend
     if (room.isSaved) {
       try {
-        const response = await fetch(`http://localhost:8080/api/room-setup/room/${encodeURIComponent(room.name)}`, {
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/room-setup/room/${encodeURIComponent(room.name)}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ const RoomSetup = ({email, setEmail}) => {
         }
       };
 
-      const response = await fetch('http://localhost:8080/api/room-setup/room', {
+      const response = await fetch('https://homemanagement-backend.onrender.com/api/room-setup/room', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -196,7 +196,7 @@ const RoomSetup = ({email, setEmail}) => {
         }
       }));
 
-      const response = await fetch('http://localhost:8080/api/room-setup/devices', {
+      const response = await fetch('https://homemanagement-backend.onrender.com/api/room-setup/devices', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -236,7 +236,7 @@ const RoomSetup = ({email, setEmail}) => {
         return;
       }
 
-      const response = await fetch(`http://localhost:8080/api/room-setup/setup/${encodeURIComponent(userEmail)}`);
+      const response = await fetch(`https://homemanagement-backend.onrender.com/api/room-setup/setup/${encodeURIComponent(userEmail)}`);
       
       if (!response.ok) {
         if (response.status === 404) {

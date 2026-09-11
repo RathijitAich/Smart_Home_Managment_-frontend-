@@ -14,7 +14,7 @@ const CurrentJob = ({ worker_email, setWorkerEmail }) => {
   useEffect(() => {
     const fetchWorkerDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/maintenance-worker/${encodeURIComponent(worker_email)}`);
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/maintenance-worker/${encodeURIComponent(worker_email)}`);
         if (response.ok) {
           const data = await response.json();
           setWorker(data);
@@ -36,7 +36,7 @@ const CurrentJob = ({ worker_email, setWorkerEmail }) => {
     const fetchCurrentJobs = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:8080/api/job-applications/worker/${worker_email}`);
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/job-applications/worker/${worker_email}`);
         
         if (response.ok) {
           const data = await response.json();
@@ -96,7 +96,7 @@ const CurrentJob = ({ worker_email, setWorkerEmail }) => {
 
         console.log("Sending completion request:", requestData);
 
-        const response = await fetch(`http://localhost:8080/api/job-applications/update-status`, {
+        const response = await fetch(`https://homemanagement-backend.onrender.com/api/job-applications/update-status`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
