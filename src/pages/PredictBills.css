@@ -52,7 +52,7 @@
   pointer-events: none;
 }
 
-/* Content container */
+/* Content containers */
 .content-container {
   position: relative;
   z-index: 10;

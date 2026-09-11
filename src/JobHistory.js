@@ -481,7 +481,7 @@ const JobHistory = ({ worker_email, setWorkerEmail }) => {
 
   const filteredJobs = getFilteredAndSortedJobs();
   const filteredReviews = getFilteredAndSortedReviews();
-
+  // const handleGetStarted = (route) => {
   return (
     <div style={styles.container}>
       <div style={styles.header}>

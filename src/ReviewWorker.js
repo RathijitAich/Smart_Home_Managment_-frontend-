@@ -15,7 +15,7 @@ const ReviewWorker = ({ email, setEmail }) => {
   const [submittingReview, setSubmittingReview] = useState(false);
   const [notification, setNotification] = useState(null);
 
-  // Get current user email
+  //  Get current user email
   const currentEmail = localStorage.getItem("email") || email;
 
   // Fetch unreviewed completed jobs

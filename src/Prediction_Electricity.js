@@ -16,7 +16,7 @@ const Prediction_Electricity = ({ email, setEmail }) => {
     loadFromDatabase();
   }, []);
 
-  // Get prediction whenever roomSetup changes
+  // Get prediction whenever roomSetup change
   useEffect(() => {
     if (roomSetup && roomSetup.rooms) {
       getPrediction();
