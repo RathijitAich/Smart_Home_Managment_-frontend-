@@ -15,12 +15,6 @@ const bills = [
     icon: '🔥',
     route: '/gas-prediction'
   },
-  {
-    type: 'Water',
-    description: 'Track water consumption and forecast future charges intelligently.',
-    icon: '💧',
-    route: '/water-prediction'
-  },
 ];
 
 const PredictBills = () => {
